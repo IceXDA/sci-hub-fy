@@ -3,7 +3,14 @@
 
   "name": "Sci-Hub-Fy",
   "description": "Free access to scientific articles through Sci-Hub service.",
-  "version": "1.6.1",
+  "version": "1.6.2",
+
+  "applications": {
+    "gecko": {
+      "id": "allanino-sci-hub-fy@github.com",
+      "strict_min_version": "57.0"
+    }
+  },
 
   "permissions": [
      "activeTab",
@@ -22,7 +29,10 @@
   },
 
   "background": {
-    "scripts": ["background.js"],
+    "scripts": [
+        "js/browser-polyfill.min.js",
+        "background.js"
+    ],
     "persistent": false
   },
 

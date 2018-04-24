@@ -1,16 +1,16 @@
-// Saves options to chrome.storage
+// Saves options to browser.storage
 function save_options() {
   let domain = document.getElementById('domain').value;
-  chrome.storage.sync.set({domain: domain});
+  browser.storage.sync.set({domain: domain});
 }
 
 // Restores select box and checkbox state using the preferences
-// stored in chrome.storage.
+// stored in browser.storage.
 function restore_options() {
   // Use default value domain = 'sci-hub.tw'
-  chrome.storage.sync.get({
+  browser.storage.sync.get({
     domain: 'sci-hub.tw'
-  }, function(items) {
+  }).then(function(items) {
     document.getElementById('domain').value = items.domain;
   });
 }
